@@ -3,6 +3,8 @@ package com.arabsoft.ajir.entities;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Fiche_eval_comp_id implements Serializable {
 	/**
 	 * 
@@ -11,6 +13,8 @@ public class Fiche_eval_comp_id implements Serializable {
 	private String  cod_soc ;
 	 private String  mat_pers ;
 	 private String ref_mod  ;  
+		@JsonFormat( pattern = "dd/MM/yyyy") 
+
 	  private Date dat_eval ;
 	public String getCod_soc() {
 		return cod_soc;

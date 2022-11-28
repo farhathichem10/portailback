@@ -1,11 +1,13 @@
 package com.arabsoft.ajir.entities;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
@@ -17,10 +19,10 @@ public class VALEUR_FICHE_EVAL {
 	 private String  mat_pers;
 	@Id
 	 private String ref_mod;
-	@JsonFormat( pattern = "dd/MM/yyyy") 
 
-	@Id
-	  private Date dat_eval;
+
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	  private String dat_eval;
 	@Id
 	  private String  cod_nat_comp ;
 	@Id
@@ -30,7 +32,7 @@ public class VALEUR_FICHE_EVAL {
 	@Id
 	  private String cod_val;
 	  private String commentaires ;
-	   private Long nbr_point;
+	   private BigDecimal nbr_point;
 	   private String acquis;
 	 private Long id_valeur_fiche_eval ;
 		@Column(insertable = false, updatable = false)
@@ -49,11 +51,44 @@ public class VALEUR_FICHE_EVAL {
 
 		
 		 private String libapp;
+		@Transient
+		private BigDecimal cal;
+		
 		
 	 
 	 
-	public VALEUR_FICHE_EVAL(String cod_soc, String mat_pers, String ref_mod, Date dat_eval, String cod_nat_comp,
-				String cod_comp, String cod_crit_comp, String cod_val, String commentaires, Long nbr_point,
+	public VALEUR_FICHE_EVAL(String cod_soc, String mat_pers, String ref_mod, String dat_eval, String cod_nat_comp,
+				String cod_comp, String cod_crit_comp, String cod_val, String commentaires, BigDecimal nbr_point,
+				String acquis, Long id_valeur_fiche_eval, String lib_competence, String lib_critere, String libval,
+				String aquis_O_N, String libapp, BigDecimal cal) {
+			super();
+			this.cod_soc = cod_soc;
+			this.mat_pers = mat_pers;
+			this.ref_mod = ref_mod;
+			this.dat_eval = dat_eval;
+			this.cod_nat_comp = cod_nat_comp;
+			this.cod_comp = cod_comp;
+			this.cod_crit_comp = cod_crit_comp;
+			this.cod_val = cod_val;
+			this.commentaires = commentaires;
+			this.nbr_point = nbr_point;
+			this.acquis = acquis;
+			this.id_valeur_fiche_eval = id_valeur_fiche_eval;
+			this.lib_competence = lib_competence;
+			this.lib_critere = lib_critere;
+			this.libval = libval;
+			Aquis_O_N = aquis_O_N;
+			this.libapp = libapp;
+			this.cal = cal;
+		}
+	public BigDecimal getCal() {
+			return cal;
+		}
+		public void setCal(BigDecimal cal) {
+			this.cal = cal;
+		}
+	public VALEUR_FICHE_EVAL(String cod_soc, String mat_pers, String ref_mod, String dat_eval, String cod_nat_comp,
+				String cod_comp, String cod_crit_comp, String cod_val, String commentaires, BigDecimal nbr_point,
 				String acquis, Long id_valeur_fiche_eval, String lib_competence, String lib_critere, String libval,
 				String aquis_O_N, String libapp) {
 			super();
@@ -81,8 +116,8 @@ public class VALEUR_FICHE_EVAL {
 		public void setLibapp(String libapp) {
 			this.libapp = libapp;
 		}
-	public VALEUR_FICHE_EVAL(String cod_soc, String mat_pers, String ref_mod, Date dat_eval, String cod_nat_comp,
-			String cod_comp, String cod_crit_comp, String cod_val, String commentaires, Long nbr_point, String acquis,
+	public VALEUR_FICHE_EVAL(String cod_soc, String mat_pers, String ref_mod, String dat_eval, String cod_nat_comp,
+			String cod_comp, String cod_crit_comp, String cod_val, String commentaires, BigDecimal nbr_point, String acquis,
 			Long id_valeur_fiche_eval, String lib_competence, String lib_critere, String libval, String aquis_O_N) {
 		super();
 		this.cod_soc = cod_soc;
@@ -102,29 +137,10 @@ public class VALEUR_FICHE_EVAL {
 		this.libval = libval;
 		Aquis_O_N = aquis_O_N;
 	}
-	public String getLib_competence() {
-		return lib_competence;
-	}
-	public void setLib_competence(String lib_competence) {
-		this.lib_competence = lib_competence;
-	}
-	public String getLib_critere() {
-		return lib_critere;
-	}
-	public void setLib_critere(String lib_critere) {
-		this.lib_critere = lib_critere;
-	}
-	public String getLibval() {
-		return libval;
-	}
-	public void setLibval(String libval) {
-		this.libval = libval;
-	}
-	public String getAquis_O_N() {
-		return Aquis_O_N;
-	}
-	public void setAquis_O_N(String aquis_O_N) {
-		Aquis_O_N = aquis_O_N;
+	
+	public VALEUR_FICHE_EVAL() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	public String getCod_soc() {
 		return cod_soc;
@@ -144,10 +160,11 @@ public class VALEUR_FICHE_EVAL {
 	public void setRef_mod(String ref_mod) {
 		this.ref_mod = ref_mod;
 	}
-	public Date getDat_eval() {
+
+	public String getDat_eval() {
 		return dat_eval;
 	}
-	public void setDat_eval(Date dat_eval) {
+	public void setDat_eval(String dat_eval) {
 		this.dat_eval = dat_eval;
 	}
 	public String getCod_nat_comp() {
@@ -180,10 +197,10 @@ public class VALEUR_FICHE_EVAL {
 	public void setCommentaires(String commentaires) {
 		this.commentaires = commentaires;
 	}
-	public Long getNbr_point() {
+	public BigDecimal getNbr_point() {
 		return nbr_point;
 	}
-	public void setNbr_point(Long nbr_point) {
+	public void setNbr_point(BigDecimal nbr_point) {
 		this.nbr_point = nbr_point;
 	}
 	public String getAcquis() {
@@ -198,26 +215,29 @@ public class VALEUR_FICHE_EVAL {
 	public void setId_valeur_fiche_eval(Long id_valeur_fiche_eval) {
 		this.id_valeur_fiche_eval = id_valeur_fiche_eval;
 	}
-	public VALEUR_FICHE_EVAL() {
-		super();
+	public String getLib_competence() {
+		return lib_competence;
 	}
-	public VALEUR_FICHE_EVAL(String cod_soc, String mat_pers, String ref_mod, Date dat_eval, String cod_nat_comp,
-			String cod_comp, String cod_crit_comp, String cod_val, String commentaires, Long nbr_point, String acquis,
-			Long id_valeur_fiche_eval) {
-		super();
-		this.cod_soc = cod_soc;
-		this.mat_pers = mat_pers;
-		this.ref_mod = ref_mod;
-		this.dat_eval = dat_eval;
-		this.cod_nat_comp = cod_nat_comp;
-		this.cod_comp = cod_comp;
-		this.cod_crit_comp = cod_crit_comp;
-		this.cod_val = cod_val;
-		this.commentaires = commentaires;
-		this.nbr_point = nbr_point;
-		this.acquis = acquis;
-		this.id_valeur_fiche_eval = id_valeur_fiche_eval;
+	public void setLib_competence(String lib_competence) {
+		this.lib_competence = lib_competence;
 	}
-	 
-
+	public String getLib_critere() {
+		return lib_critere;
+	}
+	public void setLib_critere(String lib_critere) {
+		this.lib_critere = lib_critere;
+	}
+	public String getLibval() {
+		return libval;
+	}
+	public void setLibval(String libval) {
+		this.libval = libval;
+	}
+	public String getAquis_O_N() {
+		return Aquis_O_N;
+	}
+	public void setAquis_O_N(String aquis_O_N) {
+		Aquis_O_N = aquis_O_N;
+	}
+	
 }

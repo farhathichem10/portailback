@@ -46,7 +46,7 @@ public class FICHE_EVAL_COMP {
 		
 		
 	public FICHE_EVAL_COMP(String cod_soc, String mat_pers, String ref_mod, String cod_metier, String cod_post,
-				Date dat_eval, String cod_typ_eval, String cod_soc_evaluateur, String mat_pers_evaluateur,
+			Date dat_eval, String cod_typ_eval, String cod_soc_evaluateur, String mat_pers_evaluateur,
 				String observation, Long y_anciennete, Long m_anciennete, Long j_anciennete, String cod_typ_prom,
 				Long annee, Long num_dem, String cod_nat, String avis_evaluateur, Long id_fiche_eval_comp,
 				String libpost, String libprenomevaluateur, String libmod) {

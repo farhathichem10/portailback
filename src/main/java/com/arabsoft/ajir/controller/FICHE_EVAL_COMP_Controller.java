@@ -1,6 +1,6 @@
 package com.arabsoft.ajir.controller;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,9 +19,9 @@ import com.arabsoft.ajir.entities.FICHE_EVAL_COMP;
 public class FICHE_EVAL_COMP_Controller {
 	@Autowired
 	FicheEvalDao FICHE;
-	@GetMapping("/getfiche/{mat}/{ref}")
-	public List<FICHE_EVAL_COMP> getFicheEval(@PathVariable("mat")String mat,@PathVariable("ref")String ref){
-		return FICHE.getFicheEval(mat,ref);
+	@GetMapping("/getfiche/{mat}")
+	public Optional<FICHE_EVAL_COMP> getFicheEval(@PathVariable("mat")String mat){
+		return FICHE.getFicheEval(mat);
 		
 		
 		

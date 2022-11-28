@@ -1,6 +1,7 @@
 package com.arabsoft.ajir.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,7 +19,7 @@ public interface FicheEvalDao extends JpaRepository<FICHE_EVAL_COMP, Fiche_eval_
 			+ "  pk_get_lib.GET_MODELE$LIBELLE_MOD(t.ref_mod)libmod,\r\n"
 			+ "  t.cod_metier,\r\n"
 			+ "  t.cod_post,\r\n"
-			+ "  t.dat_eval ,\r\n"
+			+ "  t.dat_eval  ,\r\n"
 			+ "  t.cod_typ_eval,\r\n"
 			+ "  t.cod_soc_evaluateur, \r\n"
 			+ "  t.mat_pers_evaluateur ,\r\n"
@@ -34,9 +35,9 @@ public interface FicheEvalDao extends JpaRepository<FICHE_EVAL_COMP, Fiche_eval_
 			+ "  t.id_fiche_eval_comp  ,\r\n"
 			+ " pk_get_lib.GET_POSTE$LIB_POST(t.cod_post)libpost,\r\n"
 			+ " (select nom_pers||' '||pren_pers from personnel a where a.cod_soc  = t.cod_soc_evaluateur and a.mat_pers  = t.mat_pers_evaluateur) libprenomevaluateur  \r\n"
-			+ "  from fiche_eval_comp t,personnel p  where t.cod_soc = p.cod_soc and t.mat_pers = p.mat_pers and p.mat_pers =:mat and t.ref_mod=:ref \r\n"
+			+ "  from fiche_eval_comp t,personnel p  where t.cod_soc = p.cod_soc and t.mat_pers = p.mat_pers and p.mat_pers =:mat  \r\n"
 			+ "",nativeQuery=true)
-	public List<FICHE_EVAL_COMP> getFicheEval(@Param("mat")String mat,@Param("ref")String ref);
+	public Optional<FICHE_EVAL_COMP> getFicheEval(@Param("mat")String mat);
 	
 
 
