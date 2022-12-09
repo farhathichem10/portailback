@@ -44,6 +44,32 @@ public class PersonnelService {
 	p.setPossede(this.getListPOSS(codSoc, matPers));
 		return p;
 	}
+	public List <Personnel> getpersInfo2(String cod_serv,String mat) {
+		List <Personnel> p = personnelDAO. getPersonnel2(cod_serv,mat);
+		
+		//p.setAdresses_personnel(adrPersDAO.getAdrPers(p.getCod_soc(), p.getMat_pers()));
+		//p.setMode_payement(possModpService.getListPossModp(p.getCod_soc(), p.getMat_pers()));
+		//p.setRens_pers(renseignementPersDAO.getRensPers(p.getCod_soc(), p.getMat_pers()));
+		//p.setEtab(ETABB.getetablissementbycodesocandmatpers(p.getCod_soc(), p.getMat_pers()));
+		//p.setPossede(this.getListPOSS(p.getCod_soc(), p.getMat_pers()));
+
+		for(Personnel pr: p) {
+			//pr.setAdresses_personnel(adrPersDAO.getAdrPers(pr.getCod_soc(), pr.getMat_pers()));
+			//pr.setMode_payement(possModpService.getListPossModp(pr.getCod_soc(), pr.getMat_pers()));
+			//pr.setRens_pers(renseignementPersDAO.getRensPers(pr.getCod_soc(), pr.getMat_pers()));
+			//pr.setEtab(ETABB.getetablissementbycodesocandmatpers(pr.getCod_soc(), pr.getMat_pers()));
+			//pr.setPossede(this.getListPOSS(pr.getCod_soc(), pr.getMat_pers()));
+			
+			
+		//System.out.println("fsssds"+p.getCod_soc());
+		
+			
+			
+			
+			
+		}
+		return p;
+	}
 	
 	
 	public List<POSSEDE> getListPOSS(String codSoc,String matPers){

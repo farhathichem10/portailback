@@ -61,11 +61,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/consPaie/**").permitAll().antMatchers("/conge/**").permitAll()
 				.antMatchers("/bultSoin/**").permitAll().antMatchers("/cessionpers/**").permitAll()
 				.antMatchers("/ligbult/**").permitAll().antMatchers("/affilprs/**").permitAll()
-				.antMatchers("/comptepers/**").permitAll().antMatchers("/famille/**").permitAll()
-				.antMatchers("/infoPers/**").permitAll().antMatchers("/scofam/**").permitAll()
-				.antMatchers("/noteevent/**").permitAll().antMatchers("/FICHEEVALCOMP/**").permitAll().antMatchers("/valeurficheeval/**").permitAll().antMatchers("/Mod/**").permitAll()
+				.antMatchers("/comptepers/**").permitAll().antMatchers("/famille/**").permitAll().antMatchers("/Adrpers/**").permitAll()
+				.antMatchers("/infoPers/**").permitAll().antMatchers("/scofam/**").permitAll().antMatchers("/FicheEvalDef/**").permitAll()
+				.antMatchers("/noteevent/**").permitAll().antMatchers("/OBJECTIF/**").permitAll().antMatchers("/Competance_reel/**").permitAll().antMatchers("/FICHEEVALCOMP/**").permitAll().antMatchers("/valeurficheeval/**").permitAll().antMatchers("/Mod/**").permitAll()
 
-				.antMatchers("/api/test/**").permitAll().antMatchers("/api/auth/getall").permitAll().anyRequest()
+				.antMatchers("/api/test/**").permitAll().antMatchers("/api/auth/getall").permitAll().antMatchers("/COMPETENCE_POSTE/**").permitAll().anyRequest()
 				.authenticated();
 
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

@@ -15,10 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 public class ComptePers {
 	
 	@Id
-	@JsonProperty(access = Access.WRITE_ONLY)
 	private String cod_soc;
 	@Id
-	@JsonProperty(access = Access.WRITE_ONLY)
 	private String mat_pers;
 	@Id
 	private String cod_typ_bul;

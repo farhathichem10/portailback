@@ -19,7 +19,7 @@ public interface FicheEvalDao extends JpaRepository<FICHE_EVAL_COMP, Fiche_eval_
 			+ "  pk_get_lib.GET_MODELE$LIBELLE_MOD(t.ref_mod)libmod,\r\n"
 			+ "  t.cod_metier,\r\n"
 			+ "  t.cod_post,\r\n"
-			+ "  t.dat_eval  ,\r\n"
+			+ "   to_char(t.dat_eval,'yyyy') dat_eval ,\r\n"
 			+ "  t.cod_typ_eval,\r\n"
 			+ "  t.cod_soc_evaluateur, \r\n"
 			+ "  t.mat_pers_evaluateur ,\r\n"

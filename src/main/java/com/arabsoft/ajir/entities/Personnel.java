@@ -85,7 +85,7 @@ public class Personnel {
 	@Column(insertable = false, updatable = false)
 	private String lib_etat_act;
 	private String qualf;
-	private long cod_ech;
+	private Long cod_ech;
 	private String cod_affect;
 	@Column(insertable = false, updatable = false)
 	private String lib_affect;
@@ -148,7 +148,7 @@ public class Personnel {
 	private String pourcent_hand;
 	private String typ_handicap;
 	private String num_fich_hand;
-	private long niv_sal;
+	private Long niv_sal;
 	private String cod_assur;
 	private String num_assur;
 	private String typ_id;
@@ -453,10 +453,10 @@ public class Personnel {
 	public void setQualf(String qualf) {
 		this.qualf = qualf;
 	}
-	public long getCod_ech() {
+	public Long getCod_ech() {
 		return cod_ech;
 	}
-	public void setCod_ech(long cod_ech) {
+	public void setCod_ech(Long cod_ech) {
 		this.cod_ech = cod_ech;
 	}
 	public String getCod_affect() {
@@ -711,10 +711,10 @@ public class Personnel {
 	public void setNum_fich_hand(String num_fich_hand) {
 		this.num_fich_hand = num_fich_hand;
 	}
-	public long getNiv_sal() {
+	public Long getNiv_sal() {
 		return niv_sal;
 	}
-	public void setNiv_sal(long niv_sal) {
+	public void setNiv_sal(Long niv_sal) {
 		this.niv_sal = niv_sal;
 	}
 	public String getCod_assur() {
@@ -802,7 +802,7 @@ public class Personnel {
 		this.rens_pers = rens_pers;
 	}
 	public List<ETABLIS_PERS> getEtab() {
-		return etab;
+	return etab;
 	}
 	public void setEtab(List<ETABLIS_PERS> etab) {
 		this.etab = etab;
@@ -811,7 +811,7 @@ public class Personnel {
 		return possede;
 	}
 	public void setPossede(List<POSSEDE> possede) {
-		this.possede = possede;
+	this.possede = possede;
 	}
 	
 }

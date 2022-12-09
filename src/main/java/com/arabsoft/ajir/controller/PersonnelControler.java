@@ -1,6 +1,8 @@
 package com.arabsoft.ajir.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +36,13 @@ public class PersonnelControler {
 	public Personnel getInfosPerse(@PathVariable("codSoc") String c,@PathVariable("matPaers") String p) {
 
 		return this.personnelService.getpersInfo(c, p);
+	}
+	
+	@GetMapping("/getPers22/{cod_serv}/{mat_pers}")
+	public List<Personnel> getInfosPers2(@PathVariable("cod_serv")String cod_serv,@PathVariable ("mat_pers")String mat_pers) {
+		
+		
+		return this.personnelService.getpersInfo2(cod_serv,mat_pers);
 	}
 
 

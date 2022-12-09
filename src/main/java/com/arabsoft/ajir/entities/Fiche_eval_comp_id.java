@@ -13,9 +13,8 @@ public class Fiche_eval_comp_id implements Serializable {
 	private String  cod_soc ;
 	 private String  mat_pers ;
 	 private String ref_mod  ;  
-		@JsonFormat( pattern = "dd/MM/yyyy") 
 
-	  private Date dat_eval ;
+	  private String dat_eval ;
 	public String getCod_soc() {
 		return cod_soc;
 	}
@@ -34,10 +33,10 @@ public class Fiche_eval_comp_id implements Serializable {
 	public void setRef_mod(String ref_mod) {
 		this.ref_mod = ref_mod;
 	}
-	public Date getDat_eval() {
+	public String getDat_eval() {
 		return dat_eval;
 	}
-	public void setDat_eval(Date dat_eval) {
+	public void setDat_eval(String dat_eval) {
 		this.dat_eval = dat_eval;
 	}
 	public static long getSerialversionuid() {
@@ -46,7 +45,7 @@ public class Fiche_eval_comp_id implements Serializable {
 	public Fiche_eval_comp_id() {
 		super();
 	}
-	public Fiche_eval_comp_id(String cod_soc, String mat_pers, String ref_mod, Date dat_eval) {
+	public Fiche_eval_comp_id(String cod_soc, String mat_pers, String ref_mod, String dat_eval) {
 		super();
 		this.cod_soc = cod_soc;
 		this.mat_pers = mat_pers;

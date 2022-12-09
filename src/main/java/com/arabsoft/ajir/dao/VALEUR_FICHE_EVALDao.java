@@ -14,7 +14,7 @@ public interface VALEUR_FICHE_EVALDao extends JpaRepository<VALEUR_FICHE_EVAL,Pk
 	@Query(value="  Select t.cod_soc  ,\r\n"
 			+ "  t.mat_pers ,\r\n"
 			+ "  t.ref_mod  ,\r\n"
-			+ "  to_char(t.dat_eval,'dd/MM/yyyy') dat_eval,\r\n"
+			+ "  to_char(t.dat_eval,'yyyy') dat_eval,\r\n"
 			+ "  t.cod_nat_comp,\r\n"
 			+ "  t.cod_comp, \r\n"
 			+ "  t.cod_crit_comp ,\r\n"
@@ -28,7 +28,7 @@ public interface VALEUR_FICHE_EVALDao extends JpaRepository<VALEUR_FICHE_EVAL,Pk
 			+ " pk_get_lib.GET_VALEUR_CRIT_COMP$LIB_VAL(t.cod_val) libval ,\r\n"
 			+ " (select lib_val from VALEUR_CRITERE_COMPETENCE y where y.nbr_point=t.nbr_point) libapp ,\r\n"
 			+ "  decode(t.acquis,'O','Aquis','N','Non Aquis') Aquis_O_N  \r\n"
-			+ "  from VALEUR_FICHE_EVAL  t  where t.mat_pers = :mat_pers and t.cod_soc=:cod_soc and t.ref_mod=:ref_mod and  to_char(t.dat_eval,'dd/MM/yyyy') = :dat  \r\n",nativeQuery=true)
+			+ "  from VALEUR_FICHE_EVAL  t  where t.mat_pers = :mat_pers and t.cod_soc=:cod_soc and t.ref_mod=:ref_mod and  to_char(t.dat_eval,'yyyy') = :dat  \r\n",nativeQuery=true)
 	public List<VALEUR_FICHE_EVAL> getFicheEval(@Param("mat_pers")String mat,@Param("cod_soc")String cod,@Param("ref_mod")String ref,@Param("dat") String date);
 
 }

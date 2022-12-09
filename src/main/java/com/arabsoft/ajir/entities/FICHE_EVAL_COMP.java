@@ -20,9 +20,10 @@ public class FICHE_EVAL_COMP {
 	 private String ref_mod  ;           
 	 private String cod_metier;          
 	 private String cod_post  ;   
-	@JsonFormat( pattern = "dd/MM/yyyy") 
 	@Id
-	  private Date dat_eval ;
+	@JsonFormat( pattern = "dd/MM/yyyy") 
+
+	  private String dat_eval ;
 	  private String  cod_typ_eval;   ; 
 	  private String  cod_soc_evaluateur ; 
 	  private String mat_pers_evaluateur ;
@@ -46,7 +47,7 @@ public class FICHE_EVAL_COMP {
 		
 		
 	public FICHE_EVAL_COMP(String cod_soc, String mat_pers, String ref_mod, String cod_metier, String cod_post,
-			Date dat_eval, String cod_typ_eval, String cod_soc_evaluateur, String mat_pers_evaluateur,
+			String dat_eval, String cod_typ_eval, String cod_soc_evaluateur, String mat_pers_evaluateur,
 				String observation, Long y_anciennete, Long m_anciennete, Long j_anciennete, String cod_typ_prom,
 				Long annee, Long num_dem, String cod_nat, String avis_evaluateur, Long id_fiche_eval_comp,
 				String libpost, String libprenomevaluateur, String libmod) {
@@ -122,10 +123,10 @@ public class FICHE_EVAL_COMP {
 	public void setCod_post(String cod_post) {
 		this.cod_post = cod_post;
 	}
-	public Date getDat_eval() {
+	public String getDat_eval() {
 		return dat_eval;
 	}
-	public void setDat_eval(Date dat_eval) {
+	public void setDat_eval(String dat_eval) {
 		this.dat_eval = dat_eval;
 	}
 	public String getCod_typ_eval() {
@@ -210,7 +211,7 @@ public class FICHE_EVAL_COMP {
 		super();
 	}
 	public FICHE_EVAL_COMP(String cod_soc, String mat_pers, String ref_mod, String cod_metier, String cod_post,
-			Date dat_eval, String cod_typ_eval, String cod_soc_evaluateur, String mat_pers_evaluateur,
+			String dat_eval, String cod_typ_eval, String cod_soc_evaluateur, String mat_pers_evaluateur,
 			String observation, Long y_anciennete, Long m_anciennete, Long j_anciennete, String cod_typ_prom,
 			Long annee, Long num_dem, String cod_nat, String avis_evaluateur, Long id_fiche_eval_comp) {
 		super();
